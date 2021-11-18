@@ -1,4 +1,4 @@
-# Containers Orchestrator hands-on lab with Kubernetes
+# hands-on with Kubernetes
 
 ## Hello-world on Kubernetes
 
