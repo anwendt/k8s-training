@@ -21,13 +21,13 @@ deployment "my-nginx" created
 ### To expose your service to the public internet, use
 
 ```shell
-kubectl expose deployment my-nginx --target-port=80 --type=LoadBalancer
+kubectl expose pods/my-nginx --target-port=80 --type=LoadBalancer
 ```
 
 Results:
 
 ```shell
-service "my-nginx" exposed
+service/my-nginx exposed
 ```
 
 ### You can see that they are running by
@@ -79,11 +79,9 @@ Results:
 <head>
 <title>Welcome to nginx!</title>
 <style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
 </style>
 </head>
 <body>
