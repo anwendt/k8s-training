@@ -104,12 +104,11 @@ Commercial support is available at
 To kill the application and delete its containers and public IP address
 
 ```shell
-kubectl delete deployment,service my-nginx
+kubectl delete service my-nginx
 ```
 
 Results:
 
 ```shell
-deployment "my-nginx" deleted
 service "my-nginx" deleted
 ```
