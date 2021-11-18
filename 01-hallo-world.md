@@ -15,7 +15,7 @@ kubectl run my-nginx --image=nginx --port=80
 Results:
 
 ```shell
-deployment "my-nginx" created
+pod/my-nginx created
 ```
 
 ### To expose your service to the public internet, use
@@ -104,7 +104,7 @@ Commercial support is available at
 To kill the application and delete its containers and public IP address
 
 ```shell
-kubectl delete service my-nginx
+kubectl delete service,pod my-nginx
 ```
 
 Results:
