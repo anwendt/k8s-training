@@ -111,4 +111,5 @@ Results:
 
 ```shell
 service "my-nginx" deleted
+pod "my-nginx" deleted
 ```
