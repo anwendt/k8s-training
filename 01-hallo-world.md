@@ -6,10 +6,10 @@ From the [Kubernetes Quick Start](http://kubernetes.io/docs/user-guide/quick-sta
 
 ### To run a simple app on Kubernetes, we can use: `kubectl run`
 
-Let us start by running a simple HTTP server: nginx. Nginix is a popular HTTP server, with a pre-built container on Docker hub. The kubectl run commands below will create two nginx replicas, listening on port 80, and a public IP address for your application.
+Let us start by running a simple HTTP server: nginx. Nginix is a popular HTTP server, with a pre-built container on Docker hub. The kubectl run commands below will create a nginx instance, listening on port 80, and a public IP address for your application.
 
 ```shell
-kubectl run my-nginx --image=nginx --replicas=2 --port=80
+kubectl run my-nginx --image=nginx --port=80
 ```
 
 Results:
