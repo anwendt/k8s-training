@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swiss-army-knife-deployment
+spec:
+  selector:
+    matchLabels:
+      app: swiss-army-knife
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: swiss-army-knife
+    spec:
+      containers:
+      - name: swiss-army-knife
+        image: tcr.aocs-int.t-systems-service.com/training/swiss-army-knife:v0.12
