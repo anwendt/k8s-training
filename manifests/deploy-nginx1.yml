@@ -13,7 +13,8 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - resources: {}
+        name: nginx
         image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
         ports:
         - containerPort: 8080
