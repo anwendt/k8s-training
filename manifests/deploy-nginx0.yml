@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: tcr.aocs-int.t-systems-service.com/training/nginx:1.14.2
+    image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
     ports:
-    - containerPort: 80
+    - containerPort: 8080

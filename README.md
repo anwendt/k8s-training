@@ -17,9 +17,9 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: tcr.aocs-int.t-systems-service.com/training/nginx:1.14.2
+    image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
     ports:
-    - containerPort: 80
+    - containerPort: 8080
 ```
 ```
 kubectl apply -f  deploy-nginx0.yml
@@ -57,9 +57,9 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: tcr.aocs-int.t-systems-service.com/training/nginx:1.14.2
+        image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ```
 ```
@@ -98,9 +98,9 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: tcr.aocs-int.t-systems-service.com/training/nginx:1.14.2
+        image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ```
 ```
@@ -159,7 +159,7 @@ spec:
       - name: nginx
         image: tcr.aocs-int.t-systems-service.com/training/nginx:1.16.1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -169,7 +169,7 @@ metadata:
     run: nginx
 spec:
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
   selector:
     app: nginx
