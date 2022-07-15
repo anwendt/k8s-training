@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      securityContext:
+        runAsUser: 101
+        runAsGroup: 101
+        fsGroup: 101
+      volumes:
+      - name: temp-path
+        emptyDir: {}
+      containers:
+      - image: tcr.aocs-int.t-systems-service.com/training/nginx-unprivileged:1.22
+        name: nginx
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: true
+          capabilities: {}
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: temp-path
+          mountPath: /tmp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    run: nginx
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: nginx
